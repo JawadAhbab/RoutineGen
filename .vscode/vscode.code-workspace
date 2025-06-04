@@ -3,6 +3,10 @@
     {
       "name": "❤️ RoutineGen",
       "path": "../"
+    },
+    {
+      "name": "Src",
+      "path": "../src"
     }
   ]
 }

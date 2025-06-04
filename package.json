@@ -4,8 +4,8 @@
   "private": true,
   "main": "src/gen.ts",
   "scripts": {
-    "serve": "nodemon -q --exec \"ts-node --transpile-only\" --require @swc-node/register ./src/gen.ts",
-    "gen": "ts-node --transpile-only --require @swc-node/register ./src/gen.ts"
+    "serve": "nodemon -q --exec \"ts-node --transpile-only\" --require @swc-node/register ./src/core/gen.ts",
+    "gen": "ts-node --transpile-only --require @swc-node/register ./src/core/gen.ts"
   },
   "devDependencies": {
     "@swc-node/register": "^1.10.10",
