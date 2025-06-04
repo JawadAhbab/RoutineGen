@@ -22,10 +22,7 @@ export class PlotRegister {
     })
     console.log(frags)
     return frags
-      .map(
-        (frag) =>
-          `<div class="hour">\n${frag.map((i) => i.task.getHTML(i.portion)).join('\n')}\n</div>`
-      )
-      .join('\n')
+      .map((f) => `<div class="hour">${f.map((i) => i.task.getHTML(i.portion)).join('')}</div>`)
+      .join('')
   }
 }
