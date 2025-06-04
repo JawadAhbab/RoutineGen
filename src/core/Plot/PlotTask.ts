@@ -1,4 +1,5 @@
 export class PlotTask {
+  public ID = Math.random().toString()
   private $color: string = 'transparent'
   private $title: string
   constructor(title: string = '') {
@@ -10,9 +11,7 @@ export class PlotTask {
     return this
   }
 
-  public ID = Math.random().toString()
-  public portion = 1
-  public getHTML() {
-    return `  <div class="section" style="flex-grow: ${this.portion}; background-color: ${this.$color}"><div>${this.$title}</div></div>`
+  public getHTML(portion: number) {
+    return `<div class="section" style="flex-grow: ${portion}; background-color: ${this.$color}"><div>${this.$title}</div></div>`
   }
 }
