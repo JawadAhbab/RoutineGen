@@ -13,14 +13,13 @@ export class PlotRegister {
     const timeline = this.timeline.map((i) => (i ? i : blank))
     const frags: Frag[][] = []
     timeline.forEach((task, idx) => {
-      const fragidx = Math.floor(idx / 120)
+      const fragidx = Math.floor(idx / 60)
       if (!frags[fragidx]) frags[fragidx] = []
       const lastTask = frags[fragidx][frags[fragidx].length - 1]
       if (!lastTask) return (frags[fragidx] = [{ task, portion: 1 }])
       if (lastTask.task.ID === task.ID) return (lastTask.portion += 1)
       frags[fragidx].push({ task, portion: 1 })
     })
-    console.log(frags)
     return frags
       .map((f) => `<div class="hour">${f.map((i) => i.task.getHTML(i.portion)).join('')}</div>`)
       .join('')
