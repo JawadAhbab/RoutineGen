@@ -2,5 +2,13 @@
   "name": "routine-gen",
   "version": "0.0.0",
   "private": true,
-  "main": "src/gen.ts"
+  "main": "src/gen.ts",
+  "scripts": {
+    "serve": "nodemon --exec \"ts-node --transpile-only\" --require @swc-node/register ./src/gen.ts"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.10.10",
+    "@swc/core": "^1.11.29",
+    "nodemon": "^3.1.10"
+  }
 }
