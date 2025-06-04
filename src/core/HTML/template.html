@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background-color: black;
+      }
+      .border {
+        border: 1.5px solid #777;
+      }
+      .hour {
+        display: flex;
+      }
+      .section {
+        position: relative;
+      }
+      .section > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 6px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 200mm; width: 290mm; padding: 20px">
+      <div
+        class="border"
+        style="
+          height: 100%;
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        "
+      >
+        {$}
+      </div>
+    </div>
+  </body>
+</html>
