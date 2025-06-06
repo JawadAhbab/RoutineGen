@@ -6,9 +6,6 @@ import { template } from './templates/template'
 const savepath = join(process.cwd(), 'src/routine.html')
 
 console.clear()
-gen()
-function gen() {
-  const plot = new Plot()
-  routine(plot)
-  writeFileSync(savepath, template('gen', plot.register.createHTML()))
-}
+const plot = new Plot()
+routine(plot)
+writeFileSync(savepath, template('gen', plot.register.createHTML()))
