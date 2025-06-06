@@ -4,7 +4,7 @@
       html,
       body {
         margin: 0;
-        font-weight: 300;
+        font-weight: 400;
         font-family: 'Lexend Deca';
       }
       * {
@@ -25,6 +25,11 @@
         display: flex;
       }
       #title {
+        font-size: 25px;
+        text-align: center;
+        writing-mode: sideways-lr;
+      }
+      #date {
         text-align: center;
         writing-mode: sideways-lr;
       }
@@ -73,6 +78,7 @@
       <div id="border">
         <div id="info">
           <div id="title">ROUTINE</div>
+          <div id="date">{$2}</div>
           <div id="hours">
             <div>12 AM</div>
             <div>01 AM</div>

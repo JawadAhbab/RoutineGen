@@ -8,4 +8,7 @@ const savepath = join(process.cwd(), 'src/routine.html')
 console.clear()
 const plot = new Plot()
 routine(plot)
-writeFileSync(savepath, createHTML('gen', plot.register.genHTML()))
+
+const rhtml = plot.register.genHTML()
+const dhtml = '06 June 2025'
+writeFileSync(savepath, createHTML('gen', rhtml, dhtml))
