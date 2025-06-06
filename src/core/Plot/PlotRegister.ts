@@ -9,11 +9,11 @@ export class PlotRegister {
     idxs.forEach((idx) => (this.timeline[idx] = task))
   }
 
-  public createHTML() {
+  public genHTML() {
     const frags: Frag[][] = []
     this.setFrags(frags)
     return frags.map((frag) => {
-      const taskHTML = frag.map((i) => i.task.getHTML(i.portion))
+      const taskHTML = frag.map((i) => i.task.genHTML(i.portion))
       return createHTML('row', taskHTML)
     })
   }

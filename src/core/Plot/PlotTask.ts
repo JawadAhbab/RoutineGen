@@ -11,7 +11,9 @@ export class PlotTask {
     return this
   }
 
-  public getHTML(portion: number) {
+  public genHTML(portion: number) {
     return `<div class="section" style="flex-grow: ${portion}; background-color: ${this.$color}"><div>${this.$title}</div></div>`
   }
+
+  // private genStyle
 }
