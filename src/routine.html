@@ -4,7 +4,7 @@
       html,
       body {
         margin: 0;
-        background-color: black;
+        font-family: monospace;
       }
       * {
         box-sizing: border-box;
@@ -15,12 +15,36 @@
         padding: 15px;
       }
       #border {
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        border: 2px solid black;
+      }
+      #info {
+        display: flex;
+      }
+      #title {
+        text-align: center;
+        writing-mode: sideways-lr;
+      }
+      #hours {
+        display: grid;
+        padding: 0 10px;
+        white-space: nowrap;
+        border-left: 2px solid black;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #hours > div {
+        display: flex;
+        align-items: center;
+        text-transform: lowercase;
+      }
+      #routine {
         width: 100%;
         height: 100%;
+        flex-grow: 1;
         display: grid;
-        overflow: hidden;
-        border-radius: 10px;
-        border: 1.5px solid #777;
+        border-left: 2px solid black;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       }
       .hour {
@@ -45,7 +69,37 @@
   </head>
   <body>
     <div id="page">
-      <div id="border"><div class="hour"><div class="section" style="flex-grow:60;background-color:#777;"><div>Sleep</div></div>
+      <div id="border">
+        <div id="info">
+          <div id="title">ROUTINE</div>
+          <div id="hours">
+            <div>12AM</div>
+            <div>1AM</div>
+            <div>2AM</div>
+            <div>3AM</div>
+            <div>4AM</div>
+            <div>5AM</div>
+            <div>6AM</div>
+            <div>7AM</div>
+            <div>8AM</div>
+            <div>9AM</div>
+            <div>10AM</div>
+            <div>11AM</div>
+            <div>12PM</div>
+            <div>1PM</div>
+            <div>2PM</div>
+            <div>3PM</div>
+            <div>4PM</div>
+            <div>5PM</div>
+            <div>6PM</div>
+            <div>7PM</div>
+            <div>8PM</div>
+            <div>9PM</div>
+            <div>10PM</div>
+            <div>11PM</div>
+          </div>
+        </div>
+        <div id="routine"><div class="hour"><div class="section" style="flex-grow:60;background-color:#777;"><div>Sleep</div></div>
 </div>
 <div class="hour"><div class="section" style="flex-grow:60;background-color:#777;"><div>Sleep</div></div>
 </div>
@@ -98,6 +152,7 @@
 <div class="hour"><div class="section" style="flex-grow:60;background-color:#777;"><div>Sleep</div></div>
 </div>
 </div>
+      </div>
     </div>
   </body>
 </html>
