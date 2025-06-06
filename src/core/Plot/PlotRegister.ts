@@ -1,3 +1,4 @@
+import { createHTML } from '../templates/createHTML'
 import { PlotTask } from './PlotTask'
 type Frag = { task: PlotTask; portion: number }
 
@@ -11,9 +12,10 @@ export class PlotRegister {
   public createHTML() {
     const frags: Frag[][] = []
     this.setFrags(frags)
-    return frags
-      .map((f) => `<div class="hour">${f.map((i) => i.task.getHTML(i.portion)).join('')}</div>`)
-      .join('')
+    return frags.map((frag) => {
+      const taskHTML = frag.map((i) => i.task.getHTML(i.portion))
+      return createHTML('row', taskHTML)
+    })
   }
 
   private setFrags(frags: Frag[][]) {
@@ -28,6 +30,4 @@ export class PlotRegister {
       frags[fragidx].push({ task, portion: 1 })
     })
   }
-
-  private createFragHTML() {}
 }
