@@ -2,9 +2,9 @@ import { PlotTask } from './core/Plot/PlotTask'
 
 export const task = {
   sleep() {
-    return new PlotTask('Sleep').color('#777')
+    return new PlotTask('Sleep').bg('#777')
   },
   salah() {
-    return new PlotTask('Salah').color('#005f46')
+    return new PlotTask('Salah').bg('#005f46').color('white')
   },
 }
