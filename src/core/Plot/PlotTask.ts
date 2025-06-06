@@ -12,8 +12,13 @@ export class PlotTask {
   }
 
   public genHTML(portion: number) {
+    this.styles = []
+    this.pushStyle('flex-grow', portion)
     return `<div class="section" style="flex-grow: ${portion}; background-color: ${this.$color}"><div>${this.$title}</div></div>`
   }
 
-  // private genStyle
+  private styles: string[] = []
+  private pushStyle(prop: string, value: string | number) {
+    this.styles.push(`${prop}: ${value};`)
+  }
 }
