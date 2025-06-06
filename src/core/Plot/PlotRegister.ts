@@ -9,9 +9,16 @@ export class PlotRegister {
   }
 
   public createHTML() {
+    const frags: Frag[][] = []
+    this.setFrags(frags)
+    return frags
+      .map((f) => `<div class="hour">${f.map((i) => i.task.getHTML(i.portion)).join('')}</div>`)
+      .join('')
+  }
+
+  private setFrags(frags: Frag[][]) {
     const blank = new PlotTask('')
     const timeline = this.timeline.map((i) => (i ? i : blank))
-    const frags: Frag[][] = []
     timeline.forEach((task, idx) => {
       const fragidx = Math.floor(idx / 60)
       if (!frags[fragidx]) frags[fragidx] = []
@@ -20,8 +27,7 @@ export class PlotRegister {
       if (lastTask.task.ID === task.ID) return (lastTask.portion += 1)
       frags[fragidx].push({ task, portion: 1 })
     })
-    return frags
-      .map((f) => `<div class="hour">${f.map((i) => i.task.getHTML(i.portion)).join('')}</div>`)
-      .join('')
   }
+
+  private createFragHTML() {}
 }
